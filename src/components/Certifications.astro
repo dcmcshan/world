@@ -1,0 +1,104 @@
+---
+const certs = [
+  {
+    level: 'Foundation',
+    code: 'WM-100',
+    title: 'World Model Foundations',
+    description: 'Core principles of world models — from mental simulation and intuitive physics to learned latent dynamics. Build your first predictive environment model.',
+    color: 'accent',
+    gradient: 'from-accent to-accent-light',
+    shadow: 'shadow-accent/20',
+    modules: ['Intuitive Physics & Object Permanence', 'Latent State Representations', 'Generative Environment Models', 'Evaluation & Benchmarking'],
+    hours: 30,
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+  },
+  {
+    level: 'Practitioner',
+    code: 'WM-200',
+    title: 'Simulation Intelligence',
+    description: 'Design and train neural simulators for robotics, autonomous systems, and scientific discovery. Master differentiable physics and sim-to-real transfer.',
+    color: 'emerald',
+    gradient: 'from-emerald to-emerald-light',
+    shadow: 'shadow-emerald/20',
+    modules: ['Differentiable Physics Engines', 'Neural Radiance & Gaussian Splatting', 'Sim-to-Real Transfer', 'Multi-Modal Sensor Simulation'],
+    hours: 40,
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`,
+  },
+  {
+    level: 'Specialist',
+    code: 'WM-300',
+    title: 'Embodied AI Architect',
+    description: 'Build agents that learn and act within world models. Covers model-based reinforcement learning, planning through imagination, and real-time embodied systems.',
+    color: 'gold',
+    gradient: 'from-gold to-gold-light',
+    shadow: 'shadow-gold/20',
+    modules: ['Model-Based RL & Dreamer Architectures', 'Planning Through Imagination', 'Hierarchical World Models', 'Real-Time Embodied Systems'],
+    hours: 35,
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0-6h18M3 15h18"/></svg>`,
+  },
+  {
+    level: 'Expert',
+    code: 'WM-400',
+    title: 'World Model Engineer',
+    description: 'The capstone credential. Design production-scale world models for industry applications — from autonomous driving to surgical robotics to climate simulation.',
+    color: 'rose',
+    gradient: 'from-rose to-[#fb7185]',
+    shadow: 'shadow-rose/20',
+    modules: ['Production-Scale Architecture', 'Distributed Training & Inference', 'Safety & Alignment for World Models', 'Capstone Industry Project'],
+    hours: 45,
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  },
+];
+---
+
+<section id="certifications" class="relative py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Section header -->
+    <div class="max-w-2xl mb-16">
+      <div class="text-sm font-semibold text-accent-light tracking-widest uppercase mb-4">Certification Tracks</div>
+      <h2 class="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
+        Four levels of mastery
+      </h2>
+      <p class="text-lg text-text-dim">
+        Each certification builds on the last, taking you from foundational theory to production-grade world model engineering.
+      </p>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+      {certs.map((cert) => (
+        <div class={`group relative rounded-2xl border border-white/5 bg-surface/50 backdrop-blur-sm p-8 hover:border-white/10 hover:bg-surface transition-all duration-300`}>
+          <!-- Level badge -->
+          <div class="flex items-center justify-between mb-6">
+            <div class={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-${cert.color}/10 border border-${cert.color}/20`}>
+              <Fragment set:html={cert.icon} />
+              <span class={`text-sm font-semibold text-${cert.color}-light`}>{cert.level}</span>
+            </div>
+            <span class="text-xs font-mono text-text-faint">{cert.code}</span>
+          </div>
+
+          <h3 class="text-2xl font-bold text-white mb-3">{cert.title}</h3>
+          <p class="text-text-dim leading-relaxed mb-6">{cert.description}</p>
+
+          <!-- Modules -->
+          <div class="space-y-2 mb-6">
+            {cert.modules.map((mod) => (
+              <div class="flex items-start gap-3 text-sm">
+                <div class={`w-1.5 h-1.5 rounded-full bg-${cert.color} mt-1.5 shrink-0`}></div>
+                <span class="text-text-dim">{mod}</span>
+              </div>
+            ))}
+          </div>
+
+          <!-- Footer -->
+          <div class="flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-sm text-text-faint">{cert.hours} hours</span>
+            <span class={`text-sm font-medium text-${cert.color}-light group-hover:underline cursor-pointer`}>
+              Learn more &rarr;
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

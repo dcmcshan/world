@@ -1,0 +1,75 @@
+---
+const reasons = [
+  {
+    title: 'The Next Frontier of AI',
+    description: 'World models are how AI systems will understand causality, predict outcomes, and reason about the physical world. Every major AI lab is investing here.',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+  },
+  {
+    title: 'Industry Demand',
+    description: 'Autonomous vehicles, robotics, drug discovery, and climate science all require engineers who can build and deploy world models at scale.',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`,
+  },
+  {
+    title: 'Rigorous & Hands-On',
+    description: 'Every module includes lab work. You won\'t just read papers — you\'ll implement world models from scratch, train them on GPU clusters, and deploy them.',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>`,
+  },
+  {
+    title: 'Recognized Credential',
+    description: 'Castalia Institute certifications are recognized across the AI industry. Join a global network of world model engineers building the future.',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>`,
+  },
+];
+---
+
+<section id="why" class="relative py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-2xl mb-16">
+      <div class="text-sm font-semibold text-gold-light tracking-widest uppercase mb-4">Why World Models</div>
+      <h2 class="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
+        The models that understand reality
+      </h2>
+      <p class="text-lg text-text-dim">
+        Large language models predict tokens. World models predict <em>physics</em>. They are the foundation for AI that can truly understand and interact with the real world.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+      {reasons.map((r) => (
+        <div class="rounded-2xl border border-white/5 bg-surface/30 p-8 hover:border-white/10 hover:bg-surface/50 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent-light mb-5 group-hover:bg-accent/15 transition-colors">
+            <Fragment set:html={r.icon} />
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">{r.title}</h3>
+          <p class="text-text-dim leading-relaxed">{r.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA banner -->
+    <div class="mt-20 rounded-2xl bg-gradient-to-br from-surface to-surface-light border border-white/5 p-10 sm:p-14 text-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-accent/5 via-transparent to-emerald/5"></div>
+      <div class="relative z-10">
+        <h3 class="text-3xl sm:text-4xl font-bold text-white mb-4">Ready to build the future?</h3>
+        <p class="text-lg text-text-dim max-w-xl mx-auto mb-8">
+          The 2026 cohort is now open. Join engineers from leading AI labs, robotics companies, and research institutions.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://castalia.institute"
+            class="px-8 py-4 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold shadow-xl shadow-accent/25 hover:shadow-accent/40 hover:scale-[1.02] transition-all"
+          >
+            Apply Now
+          </a>
+          <a
+            href="mailto:world@castalia.institute"
+            class="px-8 py-4 rounded-xl border border-white/10 text-text-dim font-medium hover:bg-surface hover:text-white transition-all"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
