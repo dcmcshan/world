@@ -1,0 +1,117 @@
+---
+const tiers = [
+  {
+    name: 'terrAIn Home',
+    price: '$599 – $899',
+    fit: 'Rover Pathways (WM-010 – WM-030)',
+    description: 'One bed, one vehicle, base station, and sensors. Everything a family or co-op needs for the youth credentials. Real dirt, real robots, real learning.',
+    features: ['Single RC vehicle (excavator or truck)', 'ESP32-S3 + micro-ROS firmware', '4×8 ft terrain bed plans', 'Overhead camera setup', 'All Rover Pathway lab exercises'],
+  },
+  {
+    name: 'terrAIn Research',
+    price: '$2,000 – $4,000',
+    fit: 'Professional Tracks (WM-100 – WM-400)',
+    description: 'Full fleet, Jetson base station, perception gantry, ROS2 stack, and Isaac Sim integration. The lab platform for serious world model engineering.',
+    features: ['Full fleet: excavator, truck, dozer, loader', 'Jetson Orin Nano + ROS2 stack', 'Perception gantry with RGB + depth', 'Isaac Sim digital twin scenes', 'Multi-agent coordination labs', 'Capstone project infrastructure'],
+  },
+];
+
+const labMappings = [
+  { cert: 'WM-010', label: 'Explorer', lab: 'Drive a real rover, observe how soil behaves, measure forces with sensors', color: 'sky' },
+  { cert: 'WM-020', label: 'Navigator', lab: 'Program an ESP32 rover in Python, build a terrain map from camera data', color: 'teal' },
+  { cert: 'WM-030', label: 'Cadet', lab: 'Train a neural network to navigate the terrain bed autonomously', color: 'violet' },
+  { cert: 'WM-200', label: 'Simulation', lab: 'Build an Isaac Sim digital twin of the terrain bed, transfer policies to real hardware', color: 'emerald' },
+  { cert: 'WM-300', label: 'Embodied AI', lab: 'Multi-vehicle coordination — excavator loads truck while bulldozer grades', color: 'gold' },
+  { cert: 'WM-400', label: 'Capstone', lab: 'Design and deploy a production-grade autonomous earthmoving system', color: 'rose' },
+];
+---
+
+<section id="terrain" class="relative py-32 bg-deep/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16">
+      <div class="inline-flex items-center gap-2 text-sm font-semibold tracking-widest uppercase mb-4">
+        <span class="text-[#7c9c6b]">terrAIn</span>
+        <span class="text-text-faint">&middot;</span>
+        <span class="text-text-faint">Hands-On Lab Platform</span>
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
+        Where the curriculum meets real dirt
+      </h2>
+      <p class="text-lg text-text-dim mb-6">
+        Every credential is backed by lab work on <strong class="text-white">terrAIn</strong> — an open-source robotics platform where
+        RC construction vehicles learn to dig, grade, and haul on real terrain. A 4x8 ft bed of soil becomes a world model laboratory.
+      </p>
+      <a
+        href="https://terrain.castalia.institute"
+        class="inline-flex items-center gap-2 text-[#7c9c6b] hover:text-[#9dbd87] font-medium transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+        terrain.castalia.institute
+      </a>
+    </div>
+
+    <!-- Lab mapping: which terrAIn labs power which certs -->
+    <div class="mb-16">
+      <h3 class="text-xl font-bold text-white mb-6">terrAIn labs across the pathway</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {labMappings.map((m) => (
+          <div class="rounded-xl border border-white/5 bg-surface/40 p-5 hover:border-white/10 transition-all">
+            <div class="flex items-center gap-2 mb-3">
+              <span class={`text-xs font-bold font-mono px-2 py-0.5 rounded bg-${m.color === 'sky' || m.color === 'teal' || m.color === 'violet' ? m.color + '-500' : m.color}/10 text-${m.color === 'sky' || m.color === 'teal' || m.color === 'violet' ? m.color + '-400' : m.color + '-light'}`}>{m.cert}</span>
+              <span class="text-sm text-text-faint">{m.label}</span>
+            </div>
+            <p class="text-sm text-text-dim leading-relaxed">{m.lab}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Hardware tiers -->
+    <div class="grid md:grid-cols-2 gap-6">
+      {tiers.map((tier) => (
+        <div class="rounded-2xl border border-[#7c9c6b]/20 bg-surface/40 backdrop-blur-sm p-8 hover:border-[#7c9c6b]/40 transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-2xl font-bold text-white">{tier.name}</h3>
+            <span class="text-sm font-mono text-[#7c9c6b]">{tier.price}</span>
+          </div>
+          <div class="inline-block text-xs font-medium px-2 py-0.5 rounded-md bg-[#7c9c6b]/10 text-[#7c9c6b] border border-[#7c9c6b]/20 mb-4">
+            {tier.fit}
+          </div>
+          <p class="text-text-dim leading-relaxed mb-6">{tier.description}</p>
+          <div class="space-y-2">
+            {tier.features.map((f) => (
+              <div class="flex items-start gap-3 text-sm">
+                <svg class="w-4 h-4 text-[#7c9c6b] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-text-dim">{f}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- The stack at a glance -->
+    <div class="mt-12 rounded-xl border border-white/5 bg-surface/30 p-6 sm:p-8">
+      <h3 class="text-lg font-bold text-white mb-4">The terrAIn stack</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        {[
+          { icon: '⬛', label: 'The Bed', desc: '4×8 ft soil, sand, or gravel' },
+          { icon: '🚜', label: 'The Fleet', desc: 'Huina 1:14 RC vehicles + ESP32' },
+          { icon: '📷', label: 'The Eye', desc: 'Overhead RGB + depth cameras' },
+          { icon: '🧠', label: 'The Brain', desc: 'Jetson Orin Nano + ROS2' },
+          { icon: '🖥️', label: 'The Sim', desc: 'NVIDIA Isaac Sim digital twin' },
+        ].map((s) => (
+          <div class="text-center p-3">
+            <div class="text-2xl mb-2">{s.icon}</div>
+            <div class="text-sm font-semibold text-white">{s.label}</div>
+            <div class="text-xs text-text-faint mt-1">{s.desc}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
