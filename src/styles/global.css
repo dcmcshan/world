@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@source inline("bg-sky-500/10 bg-sky-500/15 border-sky-500/20 border-sky-500/15 text-sky-400 bg-sky-400 bg-teal-500/10 bg-teal-500/15 border-teal-500/20 border-teal-500/15 text-teal-400 bg-teal-400 bg-violet-500/10 bg-violet-500/15 border-violet-500/20 border-violet-500/15 text-violet-400 bg-violet-400 bg-accent/10 bg-accent/15 bg-accent/25 border-accent/20 border-accent/30 text-accent-light bg-accent bg-emerald/10 bg-emerald/15 bg-emerald/25 border-emerald/20 border-emerald/30 text-emerald-light bg-emerald bg-gold/10 bg-gold/15 bg-gold/25 border-gold/20 border-gold/30 text-gold-light bg-gold bg-rose/10 bg-rose/15 bg-rose/25 border-rose/20 border-rose/30 text-rose-light bg-rose hover:bg-sky-500/25 hover:bg-teal-500/25 hover:bg-violet-500/25 hover:bg-accent/25 hover:bg-emerald/25 hover:bg-gold/25 hover:bg-rose/25 shadow-accent/20 shadow-emerald/20 shadow-gold/20 shadow-rose/20");
+
 @theme {
   --color-midnight: #0a0e1a;
   --color-deep: #111827;
